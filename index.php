@@ -4,10 +4,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+/* Include header as part of the code */
+require 'includes/init.php';
+
 require 'vendor/autoload.php';
 
 /* Get connection to database to access data */
-$conn = require 'include/db.php';
+$conn = require 'includes/db.php';
 
 
 /**
@@ -18,14 +21,16 @@ $conn = require 'include/db.php';
 
 
 
-$royalMailId = 'ryl54542342'; // unique consignmentId for Royal Mail
+// $royalMailId = 'ryl54542342'; // unique consignmentId for Royal Mail
 
-$UPSId = 'ups5468783'; // unique consignmentId for UPS
+// $UPSId = 'ups5468783'; // unique consignmentId for UPS
 
-$royalMail = new RoyalMail($royalMailId);
-echo $royalMail->sendParcel();
-echo "<br>";
+// $royalMail = new RoyalMail($royalMailId);
+// echo $royalMail->sendParcel();
+// echo "<br>";
 
-$UPS = new UpsDispatch($UPSId);
-echo $UPS->sendParcel();
-echo "<br>";
+// $UPS = new UpsDispatch($UPSId);
+// echo $UPS->sendParcel();
+// echo "<br>";
+
+$batches = Batch::getAll($conn);

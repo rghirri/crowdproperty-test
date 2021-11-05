@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Batch' => $baseDir . '/classes/Batch.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Database' => $baseDir . '/classes/Database.php',
     'Dispatch' => $baseDir . '/classes/Dispatch.php',
     'RoyalMail' => $baseDir . '/classes/Dispatch.php',
     'UpsDispatch' => $baseDir . '/classes/Dispatch.php',

@@ -6,8 +6,42 @@ namespace Composer\Autoload;
 
 class ComposerStaticInita7c6619c11cb4878b43ca53bd39815ae
 {
+    public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+    );
+
+    public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Twig\\' => 5,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+    );
+
     public static $classMap = array (
+        'Batch' => __DIR__ . '/../..' . '/classes/Batch.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Database' => __DIR__ . '/../..' . '/classes/Database.php',
         'Dispatch' => __DIR__ . '/../..' . '/classes/Dispatch.php',
         'RoyalMail' => __DIR__ . '/../..' . '/classes/Dispatch.php',
         'UpsDispatch' => __DIR__ . '/../..' . '/classes/Dispatch.php',
@@ -16,6 +50,8 @@ class ComposerStaticInita7c6619c11cb4878b43ca53bd39815ae
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInita7c6619c11cb4878b43ca53bd39815ae::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita7c6619c11cb4878b43ca53bd39815ae::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInita7c6619c11cb4878b43ca53bd39815ae::$classMap;
 
         }, null, ClassLoader::class);

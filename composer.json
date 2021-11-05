@@ -3,5 +3,8 @@
     "classmap":[
         "classes"
     ]
+  },
+  "require": {
+    "twig/twig": "3.0"
   }
 }
