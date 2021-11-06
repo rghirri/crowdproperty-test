@@ -23,7 +23,7 @@ class Batch
 
     /**
      * Unique identifier
-     * @var integer
+     * @var string
      */
     public $consignment_id;
 
@@ -48,9 +48,10 @@ class Batch
      */
     public static function getAll($conn)
     {
-        $sql = "SELECT *
+        $sql = "SELECT * 
                 FROM batch
-                ORDER BY order_ref;";
+                JOIN courier
+                on batch.courier_id = courier.id;";
 
         $results = $conn->query($sql);
 
