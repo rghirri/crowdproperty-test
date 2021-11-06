@@ -12,4 +12,4 @@ define('DB_PASS', '');
 // This code must be set to false when the site is ready for 
 // live production.
 //-----------------------------------------------------
-define('SHOW_ERROR_DETAIL', true); 
+define('SHOW_ERROR_DETAIL', false); 

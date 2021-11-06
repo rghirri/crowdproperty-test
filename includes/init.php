@@ -2,8 +2,6 @@
 
 /**
  * Initialisations
- *
- * Register an autoloader, start or resume the session etc.
  */
 
 
